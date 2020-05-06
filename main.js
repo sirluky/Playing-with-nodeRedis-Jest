@@ -14,10 +14,10 @@ client.get("key", redis.print);
 // client.subscribe('msg', (v) => {
 //   console.log('message', v);
 // })
-for (let i = 0; i < 1000000; i++) {
-  client.lpush('queue', Math.random() + " Kč")
-  // client.lpop('queue');
-}
+// for (let i = 0; i < 1000000; i++) {
+//   client.lpush('queue', Math.random() + " Kč")
+//   // client.lpop('queue');
+// }
 console.log('done')
 
 app.post('/greet/:id', function (req, res) {

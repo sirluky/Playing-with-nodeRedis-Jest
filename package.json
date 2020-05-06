@@ -17,6 +17,7 @@
     "redis": "^3.0.2"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.30",
     "@types/jest": "^25.2.1",
     "@types/mocha": "^7.0.2",
     "@types/node": "^13.13.5",

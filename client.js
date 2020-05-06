@@ -25,8 +25,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(bodyParser.json())
 
-bluebird.promisifyAll(redisClient);
 
+
+
+//  bluebird.promisifyAll(redisClient);
 // redisClient.setAsync('lll', 'lul')
 
 // app.listen(process.env.PORT, () => console.log(`listening on ${process.env.PORT}`))
