@@ -63,6 +63,38 @@ test('HSCAN', () => {
   })
 })
 
+test('EVENT SET', () => {
+  utils.User.eadd({ name: "Lukas", age: 19, id: 1 }, (err, res) => {
+    expect(res).toBe('OK')
+
+    utils.User.eadd({
+      name: "Radim", age: 14, id: 1
+    }, (err, res) => {
+      expect(res).toBe('OK')
+    })
+  })
+})
+
+test('EVENT FINDALL', () => {
+  // client.HMGET('clovek', ['fname', 'age'], (err, res) => {
+  // expect(res).toStrictEqual(['Lukáš', '19'])
+  // console.log(res);
+  // })
+  // client.HSCAN('clovek', '0', 'match', '?name', (err, res) => {
+  //   // console.log(res, err)
+  //   expect(res[0]).toBe("0");
+  //   expect(res[1]).toStrictEqual(['fname', 'Lukáš', 'lname', 'Kovář']);
+  //   // console.log('err')
+
+  // })
+  utils.User.efindAll((err, res) => {
+    // console.log(res)
+
+    // expect(res[1]).toStrictEqual([{ name: "Lukas", age: 19 }, { name: "Radim", age: 14 }])
+    // return 'ahoj'
+  })
+})
+
 test('REDIS STOP', () => {
   // client.PING((err, res) => expect().toBe('PONG'))
   client.quit((err, res) => expect(res).toBe('OK'))

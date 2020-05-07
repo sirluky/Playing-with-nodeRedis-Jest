@@ -7,8 +7,11 @@ const bluebird = require('bluebird');
 
 
 const redisClient = redis.createClient({
-  auth_pass: "UwR3CnHfopJBfBwnGMM3",
-  host: "80.211.216.140"
+  auth_pass: process.env.REDIS_AUTH,
+  host: process.env.REDIS_HOST,
+  prefix: process.env.REDIS_PREFIX,
+  port: parseInt(process.env.REDIS_PORT),
+
 });
 
 if (!process.env.JEST_WORKER_ID) {
